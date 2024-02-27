@@ -9,3 +9,101 @@
     <p>Welcome! I am Moekewlkatz a.k.a. Darren. I hope you enjoy viewing my work.</p>
 </body>
 </html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Content Editor</title>
+</head>
+<body>
+<h1>Content Editor</h1>
+<p>Customers want transparency in when virtual gift cards are still active or not. In addition, customers would like to know if there are any warnings, updates, or additional offers associated with their card.</p>
+<p>Content editor is a great way for anyone in your company to display their expiration dates and notices for customers on gift cards. The content editor in our system fetches information from the offer’s business segment and displays them on the card.</p>
+<p>From the dashboard:</p>
+<ol>
+  <li>Click Content Editor.</li>
+  <li>Select the offer available.</li>
+  <li>Click Edit.</li>
+  <li>Click on the text field drop down.</li>
+  <li>Select expiration date or notice.</li>
+  <li>Enter the text field. Please see below for the text field requirements.</li>
+  <li>Click Submit.</li>
+</ol>
+<p>The text field requires an input that fetches the information from the business segment that is then displayed onto your virtual gift card.</p>
+<p>Your expiration date must have the following format:<br>
+  [value]_[value]<br>
+  For example, typing in [month]_[day] in the expiration date field displays the expiration date as ‘May 30’.<br>
+  You can also type in [month]_[year] and the expiration date displays as ’May 2025’.<br>
+  Note: The expiration date can be in any order. However, they must be associated with the year, month, or day that is entered in the gift card.</p>
+<p>Your notices must have the following format:<br>
+  return = text[warning] — displays the warning field in your gift card.<br>
+  return = text[update] — displays the update field in your gift card.<br>
+  return = text[+] — displays additional notes in your gift card.<br>
+  For example, typing in return = text[warning] in the notices field displays the warning in your gift card.</p>
+<p>If you are typing in any of the above code samples and the value is not displaying on your gift gift, please check your business segment.</p>
+<p>You have to define business segments before the content editor can retrieve information. See more about business segments <a href="business_segments.html">here</a>.</p>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide to Creating a New Playlist on Spotify</title>
+</head>
+<body>
+    <h1>Guide to Creating a New Playlist on Spotify</h1>
+
+    <h2>Introduction:</h2>
+    <p>
+        Spotify's API provides developers with the ability to interact with Spotify's vast music database and perform various actions, including creating playlists. This guide will walk you through the steps to create a new playlist using the Spotify API.
+    </p>
+
+    <h2>Step 1: Obtain Authorization</h2>
+    <p>
+        Before making any requests to the Spotify API, you need to obtain proper authorization. Ensure your application has the necessary scopes to create playlists on behalf of the user.
+    </p>
+
+    <h2>Step 2: Construct the Request</h2>
+    <p>
+        To create a new playlist, send a POST request to the following endpoint:
+        <code>POST https://api.spotify.com/v1/users/{user_id}/playlists</code><br>
+        Replace <code>{user_id}</code> with the user's unique Spotify ID.
+    </p>
+
+    <h2>Step 3: Include Parameters</h2>
+    <p>
+        Include the necessary parameters in the request body. At minimum, you need to provide the playlist's name and description. Optionally, you can specify other parameters like public/private visibility or collaborative status.
+    </p>
+
+    <h2>Step 4: Make the Request</h2>
+    <p>
+        Send the POST request to the Spotify API endpoint, including the required parameters in the request body.
+    </p>
+
+    <h2>Example Request (cURL):</h2>
+    <pre>
+        <code>
+curl -X "POST" "https://api.spotify.com/v1/users/{user_id}/playlists" \
+     -H "Authorization: Bearer {access_token}" \
+     -H "Content-Type: application/json" \
+     --data "{\"name\":\"Your Playlist Name\",\"description\":\"Your Playlist Description\"}"
+        </code>
+    </pre>
+    <p>
+        Replace <code>{access_token}</code> with a valid access token and provide the appropriate <code>{user_id}</code>, playlist name, and description.
+    </p>
+
+    <h2>Step 5: Handle the Response</h2>
+    <p>
+        Upon successful creation, the API will respond with details about the newly created playlist, including its unique ID. Handle this response accordingly in your application.
+    </p>
+
+    <h2>Conclusion:</h2>
+    <p>
+        By following these steps, you can seamlessly create playlists on Spotify using their API. Ensure to handle errors and edge cases gracefully to provide a smooth user experience in your application.
+    </p>
+</body>
+</html>
