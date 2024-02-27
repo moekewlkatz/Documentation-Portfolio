@@ -10,6 +10,8 @@
 </body>
 </html>
 
+<br>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -46,6 +48,9 @@
 </body>
 </html>
 
+</br>
+<br>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,34 +61,34 @@
 <body>
     <h1>Guide to Creating a New Playlist on Spotify</h1>
 
-    <h2>Introduction:</h2>
+    <h3>Introduction:</h3>
     <p>
         Spotify's API provides developers with the ability to interact with Spotify's vast music database and perform various actions, including creating playlists. This guide will walk you through the steps to create a new playlist using the Spotify API.
     </p>
 
-    <h2>Step 1: Obtain Authorization</h2>
+    <h3>Step 1: Obtain Authorization</h3>
     <p>
         Before making any requests to the Spotify API, you need to obtain proper authorization. Ensure your application has the necessary scopes to create playlists on behalf of the user.
     </p>
 
-    <h2>Step 2: Construct the Request</h2>
+    <h3>Step 2: Construct the Request</h3>
     <p>
         To create a new playlist, send a POST request to the following endpoint:
         <code>POST https://api.spotify.com/v1/users/{user_id}/playlists</code><br>
         Replace <code>{user_id}</code> with the user's unique Spotify ID.
     </p>
 
-    <h2>Step 3: Include Parameters</h2>
+    <h3>Step 3: Include Parameters</h3>
     <p>
         Include the necessary parameters in the request body. At minimum, you need to provide the playlist's name and description. Optionally, you can specify other parameters like public/private visibility or collaborative status.
     </p>
 
-    <h2>Step 4: Make the Request</h2>
+    <h3>Step 4: Make the Request</h3>
     <p>
         Send the POST request to the Spotify API endpoint, including the required parameters in the request body.
     </p>
 
-    <h2>Example Request (cURL):</h2>
+    <h3>Example Request (cURL):</h3>
     <pre>
         <code>
 curl -X "POST" "https://api.spotify.com/v1/users/{user_id}/playlists" \
@@ -96,14 +101,112 @@ curl -X "POST" "https://api.spotify.com/v1/users/{user_id}/playlists" \
         Replace <code>{access_token}</code> with a valid access token and provide the appropriate <code>{user_id}</code>, playlist name, and description.
     </p>
 
-    <h2>Step 5: Handle the Response</h2>
+    <h3>Step 5: Handle the Response</h3>
     <p>
         Upon successful creation, the API will respond with details about the newly created playlist, including its unique ID. Handle this response accordingly in your application.
     </p>
 
-    <h2>Conclusion:</h2>
+    <h3>Conclusion:</h3>
     <p>
         By following these steps, you can seamlessly create playlists on Spotify using their API. Ensure to handle errors and edge cases gracefully to provide a smooth user experience in your application.
     </p>
 </body>
 </html>
+
+</br>
+<br>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to SAML</title>
+</head>
+<body>
+    <h2>Introduction to SAML</h2>
+    <p><strong>What is SAML?</strong><br>
+    Security Assertion Markup Language (SAML) is an XML-based open standard for exchanging
+    authentication and authorization data between parties, particularly web applications and identity
+    providers. Developed to enable Single Sign-On (SSO) capabilities, SAML plays a pivotal role in
+    enhancing security and streamlining access management across various systems.</p>
+
+    <h3>Key Components of SAML</h3>
+    <p>SAML operates on three key components: assertions, protocols, and bindings. An assertion is a
+    declaration of a fact about an entity, such as a user's identity. Protocols define the rules and
+    formats for communication, and bindings specify how messages should be exchanged.</p>
+    <p>The Key Components can be simplified as:</p>
+    <ul>
+        <li>Authentication and Authorization:
+            <ul>
+                <li>Authentication: The process of verifying the identity of a user.</li>
+                <li>Authorization: Granting access or permissions based on the verified identity.</li>
+            </ul>
+        </li>
+        <li>Single Sign-On (SSO):
+            <ul>
+                <li>Allows users to access multiple applications with a single set of login credentials,
+                which reduces the need for people to remember multiple passwords.</li>
+            </ul>
+        </li>
+        <li>Identity Provider (IdP) and Service Provider (SP):
+            <ul>
+                <li>Identity Provider (IdP): Responsible for authenticating users and providing
+                identity information.</li>
+                <li>Service Provider (SP): Relies on the IdP's authentication and makes decisions
+                about granting access based on the received information.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>How SAML Works</h3>
+    <p>When a user attempts to access a protected resource in a service provider's system, the service
+    provider requests authentication. The IdP responds by generating a SAML assertion, which
+    contains the user's identity information. This assertion is then sent back to the service provider,
+    which enables the user to access the requested resource without needing to re-enter credentials.</p>
+
+    <h4>SSO Simplified: An SAML Example</h4>
+    <p>A significant use of SAML is facilitating SSO, which allows users to access multiple
+    applications with a single set of credentials. Once authenticated with one service, users can
+    seamlessly move between applications without the need to log in repeatedly. Not only does this
+    enhance the user experience but also strengthens security by reducing the risk associated with
+    managing multiple passwords.</p>
+    <p>Ex: Darry wants to access their company's project management tool. Through the SP, Darry uses
+    SSO in the form of a push notification. This is sent to the IdP and verifies Darry’s identity. The
+    IDP sends the necessary information to the project management tool or SP, which allows Darry
+    seamless access without requiring a separate login.</p>
+
+    <h3>Advantages of SAML</h3>
+    <ul>
+        <li>Enhance Security: SAML eliminates the need for the service provider to store user
+        credentials. Thus, reduces the risk of unauthorized access.</li>
+        <li>Streamline Access Management: SAML simplifies access management by centralizing
+        authentication processes. Changes in user roles or permissions are managed through the
+        identity provider instead of an admin.</li>
+        <li>Exchange Between Systems: SAML's standardized format ensures compatibility
+        between different systems and platforms. This promotes seamless integration between
+        systems.</li>
+    </ul>
+
+    <h3>Use Cases</h3>
+    <ul>
+        <li>Enterprise SSO: SAML is widely employed in companies to provide employees with
+        secure access to various applications, which enhances productivity and security. This sign
+        on can be used for content management systems, email, and human resource centers.</li>
+        <li>Cloud Services: Many cloud service providers support SAML, allowing organizations to
+        securely integrate cloud applications into their environment. This can authenticate who
+        manages the applications and the data associated with it.</li>
+        <li>Federated Identity: SAML enables federated identity management. Multiple
+        organizations are able to share access to resources without the need for complex user
+        account setups. This can be used between financial institutions and different departments
+        in government.</li>
+    </ul>
+
+    <h3>Conclusion</h3>
+    <p>In conclusion, SAML is a powerful and widely adopted solution for addressing the challenges
+    associated with secure authentication and authorization in today's interconnected technological
+    world. By providing a standardized approach to identity management, SAML continues to play a
+    vital role in shaping a secure and user-friendly experience.</p>
+</body>
+</html>
+</br>
